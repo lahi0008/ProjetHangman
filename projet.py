@@ -83,7 +83,7 @@ def niveau():
     while n<1 or n>3:
         while True:
             try:
-                n = int(input("Error: Choisir un niveau de 1 a 3: "))
+                n = int(input(" Choisir un niveau de 1 a 3: "))
                 break
             except:
                 print("Entrer un nombre")
@@ -105,8 +105,9 @@ def debut(n):
     mot = rd.choice(texte)
     print("Chargement de fichier...")
     print(len(texte), "mots chargés")
-    print(mot)
-    return mot
+    #Affichage mot pour vérifier
+    #print(mot)
+    return mot.lower()
 niv = debut(num)
 start = len(niv)-1
 trouve = []
@@ -215,7 +216,7 @@ def Correcte(a):
             b += 1
         print(end)
         print("Bravo, lettre correcte")
-        print(niv)
+        #print(niv)
         bon_essai += 1
         if essais > 6:
             essais = 6
@@ -249,21 +250,23 @@ while continuer == 1:
                 ancien_score = score
             break
     continuer = int(input('Saisir 1 pour continuer ou une autre touche pour quitter: '))
-    niv = debut(num)
-    start = 0
-    avertissement = 3
-    essais = 6
-    
-    position = 0
-    end = ""
-    for char in range(len(niv) - 1):
-        end = end + "-"
-    caractere = list(end)
-    bon_essai = 0
-    trouve = []
-    start = len(niv) - 1
-    trouve = list(end)
-    b = 0
-    
-    print("Je vous propose un mot de ", start, " lettres. Devinez de quel mot s'agit il\n################################")
-    
+    if continuer==1:
+        niv = debut(num)
+        start = 0
+        avertissement = 3
+        essais = 6
+        
+        position = 0
+        end = ""
+        for char in range(len(niv) - 1):
+            end = end + "-"
+        caractere = list(end)
+        bon_essai = 0
+        trouve = []
+        start = len(niv) - 1
+        trouve = list(end)
+        b = 0
+        
+        print("Je vous propose un mot de ", start, " lettres. Devinez de quel mot s'agit il\n################################")
+        
+        
